@@ -55,4 +55,9 @@ sudo make install
 
 #8.change terminal color
 
+#9 make time same step
+timedatectl set-local-rtc 1
+
+#10,shot alias
+
 end
