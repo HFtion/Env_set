@@ -53,4 +53,6 @@ sudo make install
 # tab size =4
 #tree indent = 24
 
+#8.change terminal color
+
 end
