@@ -1,0 +1,7 @@
+2021.4.3
+model.eval-train
+在train时候BN层是对一个batchsize的，而eval是针对每一个单独项的，所以测试时候如果BS=1，那两者相同，但是如果BS>1，torch就会给你禅寺对应个BN模块，所以增加了显存。但是你BS一旦大于一就必然导致这样结果。
+torch.no_grad(),detach,require_grad
+(require_grad = false) ~~约等于 detach(),结果一致,但是require_grad = false仍然不求书导的向后传递数值,所以增加了显存,而detach直接斩断.
+torch.no_grad()是model里面的虽然都为require_grad = true,但是数据被detach掉了,所以从最后的结果就不向后传递任何数据.节约显存
+
