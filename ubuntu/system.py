@@ -59,5 +59,10 @@ sudo make install
 timedatectl set-local-rtc 1
 
 #10,shot alias
+alias wn='watch -n 1 nvidia-smi'
+alias t1='touch 1.txt'
+alias dp='sudo dpkg -i '
+alias ap='sudo apt-get '
+conda activate voth
 
 end
