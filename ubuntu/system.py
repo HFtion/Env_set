@@ -58,7 +58,7 @@ sudo make install
 #9 make time same step
 timedatectl set-local-rtc 1
 
-#10,shot alias
+#10,shot alias,geidt bashrc
 alias wn='watch -n 1 nvidia-smi'
 alias t1='touch 1.txt'
 alias dp='sudo dpkg -i '
