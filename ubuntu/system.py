@@ -9,21 +9,20 @@ sudo apt-get upgrade
 sudo apt-get -f install 
 
 # 3.install nvidia_driver
-# Open the settings, find the software update, replace the source and install the driver
+ubuntu-drivers devices
+sudo ubuntu-drivers autoinstall
 
-# 4.install cuda_cudnn(sometimes python might use it)
-# dowmload cuda_xx.xx.xx_xxxxxx.run
-sudo sh cuda_10.2.89_xxxxxx.run
-gedit ~/.bashrc
-# +export CUDA_HOME=/usr/local/cuda
-# +export PATH=$PATH:$CUDA_HOME/bin
-# +export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-source ~/.bashrc
-# then test
-cd /usr/local/cuda/samples/1_Utilities/deviceQuery 
-sudo make
-./deviceQuery
-# then cudnn 
+
+# 4.install cuda(sometimes python cuda actions might use it)
+# dowmload cuda_xx.xx.xx_xxxxxx.run from https://developer.nvidia.com/cuda-toolkit-archive
+sudo sh cuda_10.2.89_xxxxxx.run #not install nvidia-driver
+# find .bashrc ,add 
+export CUDA_HOME=/usr/local/cuda
+export PATH=$PATH:$CUDA_HOME/bin
+export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+# 5.install cudnn
+# download from https://developer.nvidia.com/rdp/cudnn-archive
 unzip the cudnn-xxx.tgz
 cd cudnn-xxx/
 sudo cp cuda/include/cudnn*.h /usr/local/cuda/include/ 
@@ -31,19 +30,27 @@ sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64/
 sudo chmod a+r /usr/local/cuda/include/cudnn*.h 
 sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
 
-# 5.install camke_opencv(sometimes python,qt might use it)
-sudo apt-get install libssl-dev
-# Download the latest cmake website
-# ubzip cmake-xxx.tar.gz to your home dir.
-cd cmake-xxx
-sudo ./bootstrap
-sudo make
+# 6.sometimes u might use cmake
+# download from https://cmake.org/download/
+unzip xxx
+cd ./bootstrap
+make -j 8 
 sudo make install
-# download opencv
-sudo apt-get install libgtk2.0-dev pkg-config  
-cd opencv-xxx
-mkdir build
-cd build
-sudo cmake .. -D BUILD_TIFF=ON  
-sudo make -j64
-sudo make install
+#cmake --version
+
+# 7 some app ushot download
+#lantern : https://github.com/getlantern/lantern
+#chrome 
+#baiduyun
+#miniconda
+#vscode
+#meld
+#gnome-system-monitor
+
+#7.5set vscode
+# extension: chinese,comparefolders,rainbow brackets
+# setting: Font Family= 'monospace', monospace
+# tab size =4
+#tree indent = 24
+
+end
