@@ -7,6 +7,7 @@
 # sudo dpkg -i xxx
 
 # 3.change conda，pip source
+https://mirror.tuna.tsinghua.edu.cn/help/anaconda/
 gedit ~/.condarc
 gedit ~/pip/pip.conf 
 
