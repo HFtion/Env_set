@@ -8,7 +8,7 @@
 
 # 3.change conda，pip source
 gedit ~/.condarc
-gedit ~/.config/pip/pip.conf 
+gedit ~/pip/pip.conf 
 
 
 # 4.conda create a new visual env
