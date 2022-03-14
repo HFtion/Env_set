@@ -9,6 +9,7 @@
 # 3.change conda，pip source
 https://mirror.tuna.tsinghua.edu.cn/help/anaconda/
 gedit ~/.condarc
+https://blog.csdn.net/weixin_44201449/article/details/99693943
 gedit ~/pip/pip.conf 
 
 
