@@ -7,6 +7,7 @@
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get -f install 
+gnome-system-monitor
 
 # 3.install nvidia_driver
 ubuntu-drivers devices
