@@ -12,8 +12,10 @@ gnome-system-monitor
 # 3.install nvidia_driver
 ubuntu-drivers devices
 sudo ubuntu-drivers autoinstall
-https://zhuanlan.zhihu.com/p/437334513
 
+https://zhuanlan.zhihu.com/p/437334513
+above link can replace 3,4,5
+  
 # 4.install cuda(sometimes python cuda actions might use it)
 # dowmload cuda_xx.xx.xx_xxxxxx.run from https://developer.nvidia.com/cuda-toolkit-archive
 sudo sh cuda_10.2.89_xxxxxx.run #not install nvidia-driver
