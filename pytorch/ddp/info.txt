@@ -1,0 +1,10 @@
+案例+代码
+https://github.com/wxc971231/ddp-tutorial-series?tab=readme-ov-file   里面的torchrun
+https://zhuanlan.zhihu.com/p/358974461?utm_id=0   里面的2.2.3 方式三：利用launch
+精简ddp要修改的地方
+https://zhuanlan.zhihu.com/p/637826507  里面的torchrun
+
+利用launch和torchrun没有任何区别,
+除了localrank,
+torchrun自动分配,而launch要用args.local_rank
+除了--use_env参数，其他aunch所使用的参数,torchrun均可使用，如nnodes、nproc_per_node
