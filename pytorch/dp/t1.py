@@ -36,7 +36,7 @@ class Model(nn.Module):
         return output
 
 model = Model(input_size, output_size)
-# model = nn.DataParallel(model, device_ids=[0,1], output_device=[1])
+model = nn.DataParallel(model, device_ids=[0,1], output_device=[1])
 
 model.cuda()
 
