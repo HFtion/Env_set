@@ -1,4 +1,6 @@
 
+from torch.cuda.amp import GradScaler, autocast
+scaler = GradScaler()
 
 for epoch in range(epochs):
     model.train()
@@ -8,8 +10,10 @@ for epoch in range(epochs):
 
         optimizer.zero_grad()
 
-        output = model(images)
-        loss = criterion(output, labels)
-        loss.backward()
-        optimizer.step()
+        with autocast():
+            output = model(images)
+            loss = criterion(output, labels)
+        scaler.scale(loss).backward()
+        scaler.step(optimizer)
+        scaler.update()
 
